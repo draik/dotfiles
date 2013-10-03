@@ -5,6 +5,7 @@
 " }
 
 " Vim UI {
+  set colorcolumn=80 " vertical bar at line 80
 "  set cursorcolumn " highlight the current column
   set cursorline " highlight current line
   set incsearch " BUT do highlight as you type you search phrase
