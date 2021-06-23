@@ -33,9 +33,9 @@
 
 " Text Formatting/Layout {
   set completeopt=menu,longest " improve the way autocomplete works
-  set expandtab " no real tabs please!
   set formatoptions=rq " Automatically insert comment leader on return, and let gq work
   set ignorecase " case insensitive by default
+"  set spell " spell checker
   set nowrap " do not wrap line
   set paste " clean paste, no tabbing per line
   set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
@@ -44,6 +44,7 @@
     set shiftwidth=4 " unify
     set softtabstop=4 " unify
     set tabstop=4 " real tabs should be 4, but they will show with set list on
+    set expandtab " no real tabs please!
   " }
 " }
 function! ToggleSyntax()
@@ -53,5 +54,20 @@ function! ToggleSyntax()
         syntax enable
     endif
 endfunction
+
+" Pathogen
+execute pathogen#infect()
+filetype plugin indent on
+
+" Syntastic
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_debug=3
 
 nmap <silent> ;s :call ToggleSyntax()<CR>
